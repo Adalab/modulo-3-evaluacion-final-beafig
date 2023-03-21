@@ -1,6 +1,6 @@
 const callToApi = () => {
   // Llamamos a la API
-  return fetch(url)
+  return fetch('url')
     .then((response) => response.json())
     .then((response) => {
       // Cuando responde la API podemos limpiar los datos aquí
