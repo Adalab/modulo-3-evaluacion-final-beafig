@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
+import callToApi from '../services/api';
 
 import Filters from './Filters/Filters';
 import Footer from './Footer/Footer';
-import Header from './Header/Header';
 import Landing from './Landing/Landing';
 import CharacterDetail from './List/CharacterDetail';
 import List from './List/List';
@@ -20,24 +20,11 @@ function App() {
 
   // FETCH
   useEffect(() => {
-    fetch(`https://hp-api.onrender.com/api/characters/house/${searchHouse}`)
-      .then((response) => response.json())
-      .then((data) => {
-        const cleanData = data.map(eachCharacter => ({
-          actor: eachCharacter.actor,
-          alive: eachCharacter.alive,
-          ancestry: eachCharacter.ancestry,
-          student: eachCharacter.hogwartsStudent,
-          house: eachCharacter.house,
-          id: eachCharacter.id,
-          image: eachCharacter.image,
-          name: eachCharacter.name,
-          species: eachCharacter.species,
-          nicknames: eachCharacter.alternate_names,
-          gender: eachCharacter.gender
-        }))
+    callToApi(searchHouse)
+      .then(cleanData => {
         setAllCharacters(cleanData)
-      });
+        console.log(cleanData);
+      })
   }, [searchHouse])
 
   // HANDLER FUNCTIONS
@@ -49,7 +36,7 @@ function App() {
     setSearchName(value)
   }
 
-  // FILTER FOR INPUT NAME
+  // FILTER FOR INPUT NAME AND SORT ALPHABETICALLY
 
   const filteredCharacters = allCharacters
     .filter((eachCharacter) => {
@@ -57,9 +44,9 @@ function App() {
         return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
       } else {
         // setErrorMsg(<p>No está</p>)
-        return console.log('HOLI');
       }
     })
+    .sort((x, y) => x.name.localeCompare(y.name))
 
   // const species = allCharacters
   //   .map(each => each.alive)
@@ -78,7 +65,6 @@ function App() {
   const findCharacter = allCharacters.find(eachCharacter => eachCharacter.id === characterId)
 
   return <div className="App">
-    <Header />
     <main>
       <Routes>
         <Route path='/' element={<Landing />} />

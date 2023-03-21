@@ -1,5 +1,6 @@
 import EachCharacter from './EachCharacter';
 
+
 function List({ filteredCharactersP, errorMsgP }) {
 
   const htmlList = filteredCharactersP
