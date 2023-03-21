@@ -1,16 +1,19 @@
 import EachCharacter from './EachCharacter';
 
-function List({ gryffindorP }) {
+function List({ filteredCharactersP, errorMsgP }) {
 
-  const htmlList = gryffindorP
+  const htmlList = filteredCharactersP
     .map(eachCharacter => {
       return <EachCharacter key={eachCharacter.id} eachCharacterP={eachCharacter} />
     })
 
   return (
-    <ul>
-      {htmlList}
-    </ul>
+    <>
+      <ul>
+        {htmlList}
+        {errorMsgP}
+      </ul>
+    </>
   )
 }
 export default List;

@@ -1,22 +1,24 @@
 /* SECCIÓN DE IMPORT: de React, componentes, SASS, imágenes*/
 
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { matchPath, Route, Routes, useLocation } from 'react-router-dom';
 
-import '../styles/App.scss';
+import Filters from './Filters/Filters';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import Landing from './Landing/Landing';
+import CharacterDetail from './List/CharacterDetail';
 import List from './List/List';
 
-/* SECCIÓN DEL COMPONENTE: variables de estado, efectos, funciones handler, funciones y variables para pintar el HTML y el HTML*/
 function App() {
 
-  // VARIABLES DE ESTADO
-  const [gryffindor, setGryffindor] = useState([])
-  const [searchHouse, setSearchHouse] = useState('ravenclaw')
+  // STATE VARIABLES
+  const [allCharacters, setAllCharacters] = useState([]);
+  const [searchHouse, setSearchHouse] = useState('gryffindor');
+  const [searchName, setSearchName] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
 
-  // EFECTOS
+  // FETCH
   useEffect(() => {
     fetch(`https://hp-api.onrender.com/api/characters/house/${searchHouse}`)
       .then((response) => response.json())
@@ -26,32 +28,75 @@ function App() {
           alive: eachCharacter.alive,
           ancestry: eachCharacter.ancestry,
           student: eachCharacter.hogwartsStudent,
-          staff: eachCharacter.hogwartsStaff,
           house: eachCharacter.house,
           id: eachCharacter.id,
           image: eachCharacter.image,
           name: eachCharacter.name,
           species: eachCharacter.species,
-          patronus: eachCharacter.patronus
+          nicknames: 
         }))
-        console.log(cleanData);
-        setGryffindor(cleanData)
+        setAllCharacters(cleanData)
       });
   }, [searchHouse])
 
+  // HANDLER FUNCTIONS
+  const handleSelectHouseLift = (value) => {
+    setSearchHouse(value)
+  }
 
-  // FUNCIONES HANDLER 
+  const handleInputNameLift = (value) => {
+    setSearchName(value)
+  }
 
+  // FILTER FOR INPUT NAME
 
-  // FUNCIONES Y VARIABLES 
+  const filteredCharacters = allCharacters
+    .filter((eachCharacter) => {
+      if (eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())) {
+        return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
+      } else {
+        // setErrorMsg(<p>No está</p>)
+        return console.log('HOLI');
+      }
+    })
 
+  // const species = allCharacters
+  //   .map(each => each.alive)
+
+  // console.log(species);
+
+  // USELOCATION FOR ID DYNAMIC PAGE
+  const { pathname } = useLocation()
+
+  const routeData = matchPath("/character/:id", pathname)
+
+  const characterId = routeData === null ? null : routeData.params.id
+
+  // FIND() TO FIND CLICKED CHARACTER
+
+  const findCharacter = allCharacters.find(eachCharacter => eachCharacter.id === characterId)
 
   return <div className="App">
     <Header />
     <main>
       <Routes>
         <Route path='/' element={<Landing />} />
-        <Route path='/characters/' element={<List gryffindorP={gryffindor} />} />
+        <Route path='/characters/' element={
+          <>
+            <Filters
+              handleSelectHouseLift={handleSelectHouseLift}
+              handleInputNameLift={handleInputNameLift}
+              searchNameP={searchName}
+            />
+            <List filteredCharactersP={filteredCharacters}
+              errorMsgP={errorMsg}
+            />
+          </>} />
+        <Route path='/character/:id'
+          element={<CharacterDetail
+            findCharacterP={findCharacter}
+          />}
+        />
       </Routes>
     </main>
     <Footer></Footer>
