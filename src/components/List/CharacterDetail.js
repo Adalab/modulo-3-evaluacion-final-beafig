@@ -8,6 +8,8 @@ import alive from '../../images/salud.png'
 import dead from '../../images/muerte.png'
 import student from '../../images/gorra.png'
 import noStudent from '../../images/sin-educacion.png'
+import male from '../../images/macho.png'
+import female from '../../images/hembra.png'
 
 function CharacterDetail({ findCharacterP }) {
 
@@ -33,6 +35,15 @@ function CharacterDetail({ findCharacterP }) {
     } else if (findCharacterP.house === 'Ravenclaw') {
       return <img src="https://media.mykaramelli.com/galeria/articulos/decoracion-de-pared-emblema-ravenclaw-harry-potter-61cm_12420_1.jpg" alt="Ravenclaw shield" title="Ravenclaw shield" />
     }
+
+    const gender = () => {
+      if (findCharacterP.gender === 'male') {
+        return <img src={male} alt="Male symbol" title="Male symbol" />
+      } else if (findCharacterP === 'female') {
+        return <img src={female} alt="Female symbol" title="Female symbol" />
+      }
+    }
+
   }
   return (
     <section>
@@ -54,6 +65,7 @@ function CharacterDetail({ findCharacterP }) {
         </p>
         {speciesIcon()}
       </div>
+      {gender()}
       <img src={findCharacterP.student ? student : noStudent} alt="Student logo" title="Student logo" />
       <p> Ancestry: {findCharacterP.ancestry ? findCharacterP.ancestry[0].toUpperCase() + findCharacterP.ancestry.substring(1) : 'Unknown'}</p>
     </section>

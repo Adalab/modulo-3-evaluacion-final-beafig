@@ -33,7 +33,8 @@ function App() {
           image: eachCharacter.image,
           name: eachCharacter.name,
           species: eachCharacter.species,
-          nicknames: 
+          nicknames: eachCharacter.alternate_names,
+          gender: eachCharacter.gender
         }))
         setAllCharacters(cleanData)
       });
