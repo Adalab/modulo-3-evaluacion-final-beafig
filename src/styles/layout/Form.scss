@@ -1,0 +1,31 @@
+@import "../core/variables.scss";
+
+.form {
+  background-color: #0e1b24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__btn {
+    background-color: transparent;
+    color: white;
+    padding: 7px;
+    border: solid 2px white;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 100px;
+    font-family: "Harry potter";
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: $mainColor;
+      transform: scale(130%);
+    }
+    @media (min-width: 700px) {
+      right: 35px;
+      top: 85px;
+      font-size: 30px;
+    }
+  }
+}

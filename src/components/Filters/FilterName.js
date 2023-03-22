@@ -1,3 +1,5 @@
+import '../../styles/layout/FilterName.scss'
+
 function FilterName({ handleInputNameLift, searchNameP }) {
 
   const handleInputName = (ev) => {
@@ -5,15 +7,18 @@ function FilterName({ handleInputNameLift, searchNameP }) {
   }
 
   return (
-    <label htmlFor="name">
-      Search a character {''}
-      <input
-        type="text"
-        placeholder='Ex: Dumbledore'
-        value={searchNameP}
-        onInput={handleInputName}
-      />
-    </label>
+    <>
+      <label htmlFor="name" className='nameLabel'>
+        Search a character: {''}
+        <input
+          type="text"
+          placeholder='Ex: Dumbledore'
+          value={searchNameP}
+          onInput={handleInputName}
+          className='nameInput'
+        />
+      </label>
+    </>
   )
 }
 export default FilterName;

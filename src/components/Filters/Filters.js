@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 import Header from '../Header/Header'
+import '../../styles/layout/Form.scss'
 
 function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP }) {
 
@@ -11,7 +13,10 @@ function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, sear
   return (
     <>
       <Header />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form'>
+        <Link to='/'>
+          <input type="button" value=" Go back" className='form__btn' />
+        </Link>
         <FilterHouse handleSelectHouseLift={handleSelectHouseLift}
           searchHouseP={searchHouseP} />
         <FilterName handleInputNameLift={handleInputNameLift}

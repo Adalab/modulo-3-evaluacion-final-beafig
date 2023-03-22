@@ -1,0 +1,20 @@
+@import "../core/variables.scss";
+
+.nameLabel {
+  color: white;
+  font-family: $fasthand;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.nameInput {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  height: 30px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+  font-family: "Harry potter";
+  letter-spacing: 1.5px;
+  font-size: 18px;
+}

@@ -1,3 +1,5 @@
+import '../../styles/layout/FilterHouse.scss'
+
 function FilterHouse({ handleSelectHouseLift, searchHouseP }) {
 
   const handleSelectHouse = (ev) => {
@@ -5,14 +7,14 @@ function FilterHouse({ handleSelectHouseLift, searchHouseP }) {
   }
 
   return (
-    <label htmlFor="house"> Choose a house: {''}
+    <label htmlFor="house" className='houseLabel'> Choose a house: {''}
       <select name="house" id="house"
         onChange={handleSelectHouse}
-        value={searchHouseP}>
-        <option value="gryffindor">Gryffindor</option>
-        <option value="hufflepuff">Hufflepuff</option>
-        <option value="ravenclaw">Ravenclaw</option>
-        <option value="slytherin">Slytherin</option>
+        value={searchHouseP} className='houseSelect'>
+        <option className='houseOption' value="gryffindor">Gryffindor</option>
+        <option className='houseOption' value="hufflepuff">Hufflepuff</option>
+        <option className='houseOption' value="ravenclaw">Ravenclaw</option>
+        <option className='houseOption' value="slytherin">Slytherin</option>
       </select>
     </label>
   )

@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
 import EachCharacter from './EachCharacter';
+
+import '../../styles/layout/List.scss'
 
 
 function List({ filteredCharactersP, errorMsgP }) {
@@ -11,8 +12,7 @@ function List({ filteredCharactersP, errorMsgP }) {
 
   return (
     <>
-      <Link to='/'> Volver</Link>
-      <ul>
+      <ul className='list'>
         {htmlList}
         {errorMsgP}
       </ul>

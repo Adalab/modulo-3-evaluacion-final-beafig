@@ -9,10 +9,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vh;
+  @media (min-width: 780px) {
+    background-size: cover;
+    background-position-y: 30%;
+  }
   &__title {
     font-family: "Harry potter";
     font-size: 65px;
     color: white;
+    @media (min-width: 780px) {
+      font-size: 95px;
+    }
   }
 }

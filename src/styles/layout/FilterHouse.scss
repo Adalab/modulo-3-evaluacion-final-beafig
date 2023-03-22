@@ -1,0 +1,26 @@
+@import "../core/variables.scss";
+
+.houseLabel {
+  color: white;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-family: $fasthand;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.houseSelect {
+  height: 30px;
+  border: none;
+  box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+  font-family: "Harry potter";
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.houseOption {
+  font-family: "Harry potter";
+  letter-spacing: 2px;
+  font-size: 18px;
+}

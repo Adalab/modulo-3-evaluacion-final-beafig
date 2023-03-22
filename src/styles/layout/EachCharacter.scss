@@ -1,0 +1,41 @@
+@import "../core/variables.scss";
+
+.eachCharacter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  &__title {
+    font-family: "Harry potter";
+    font-size: 30px;
+    text-align: center;
+    color: white;
+  }
+  &__img {
+    width: 150px;
+    border-radius: 15%;
+    border: solid 2px #0e1b24;
+    margin: 5px 10px 0 0;
+  }
+  &__link {
+    background-image: linear-gradient(#0e1b24, #3f4447);
+    text-decoration: none;
+    border: solid 1px white;
+    margin: 0 15px 15px 15px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  &__container--specie {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  &__specie {
+    width: 25px;
+  }
+  &__text {
+    font-size: 17px;
+    font-family: $fasthand;
+    letter-spacing: 2px;
+  }
+}
