@@ -89,7 +89,7 @@ function App() {
               searchHouseP={searchHouse}
             />
             <List filteredCharactersP={filteredCharacters}
-              errorMsgP={errorMsg} inputMsgP={inputMsg}
+              errorMsgP={errorMsg}
             />
           </>} />
         <Route path='/character/:id'

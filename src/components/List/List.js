@@ -12,9 +12,9 @@ function List({ filteredCharactersP, errorMsgP }) {
 
   return (
     <>
+      {errorMsgP}
       <ul className='list'>
         {htmlList}
-        {errorMsgP}
       </ul>
     </>
   )

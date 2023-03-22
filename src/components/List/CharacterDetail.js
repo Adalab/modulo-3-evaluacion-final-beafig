@@ -86,7 +86,7 @@ function CharacterDetail({ findCharacterP }) {
                   <img src={findCharacterP.student ? student : noStudent} alt="Student logo" title="Student logo" className="container__data--logo" />
                 </div>
                 <p className="container__desc--act"> Ancestry: {findCharacterP.ancestry ? findCharacterP.ancestry[0].toUpperCase() + findCharacterP.ancestry.substring(1) : 'Unknown'}</p>
-                <p className="container__desc--act">Actress/actor: {findCharacterP.actor ? findCharacterP : 'Unknown'}</p>
+                <p className="container__desc--act">Actress/actor: {findCharacterP.actor ? findCharacterP.actor : 'Unknown'}</p>
                 {gender()}
               </div>
             </div>
