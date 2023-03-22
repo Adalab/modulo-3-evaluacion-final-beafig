@@ -1,0 +1,97 @@
+@import "../core/variables.scss";
+
+.detail {
+  background-image: url("https://images8.alphacoders.com/110/1102284.jpg");
+  min-height: 85vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__btn {
+    background-color: transparent;
+    color: white;
+    padding: 15px;
+    border: solid 2px white;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-family: "Harry potter";
+    font-size: 25px;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: $mainColor;
+      transform: scale(130%);
+    }
+  }
+
+  &__container {
+    min-width: 275px;
+    margin-top: 35px;
+    border: solid 2px white;
+    border-radius: 10%;
+    background-image: linear-gradient(#0e1b24, #767676);
+    padding: 15px;
+  }
+  &__desc {
+    &--box {
+      display: flex;
+      align-items: center;
+    }
+    &--img {
+      width: 150px;
+      border-radius: 15%;
+      border: solid 2px #0e1b24;
+      margin: 5px 10px 0 0;
+    }
+  }
+  &__house {
+    width: 80px;
+  }
+}
+
+.container__name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--text {
+    font-family: "Harry potter";
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    letter-spacing: 1.5px;
+  }
+  &--icon {
+    margin-left: 15px;
+    margin-top: -10px;
+    height: 30px;
+  }
+}
+
+.container__desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  color: white;
+  font-size: 17px;
+  font-family: $fasthand;
+  letter-spacing: 2px;
+  &--act {
+    margin-top: 10px;
+  }
+  &--gender {
+    margin-top: 10px;
+  }
+}
+
+.container__data {
+  display: flex;
+  align-items: center;
+  &--logo {
+    width: 30px;
+  }
+}

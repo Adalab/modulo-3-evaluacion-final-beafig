@@ -10,6 +10,7 @@
     font-size: 30px;
     text-align: center;
     color: white;
+    letter-spacing: 1.5px;
   }
   &__img {
     width: 150px;
@@ -19,8 +20,10 @@
   }
   &__link {
     background-image: linear-gradient(#0e1b24, #3f4447);
+    max-height: 300px;
     text-decoration: none;
     border: solid 1px white;
+    border-radius: 10%;
     margin: 0 15px 15px 15px;
     padding: 10px;
     cursor: pointer;
