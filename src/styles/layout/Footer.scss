@@ -1,0 +1,19 @@
+@import "../core/variables.scss";
+
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 2px white;
+  height: 15vh;
+  &__text {
+    color: white;
+    margin-top: 5px;
+    font-family: $fasthand;
+  }
+  &__logo {
+    height: 70px;
+  }
+}
