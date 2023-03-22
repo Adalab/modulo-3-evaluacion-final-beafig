@@ -22,10 +22,30 @@
       color: $mainColor;
       transform: scale(130%);
     }
-    @media (min-width: 700px) {
+    @media (min-width: 780px) {
       right: 35px;
       top: 85px;
       font-size: 30px;
+      top: 170px;
+    }
+  }
+  &__reset {
+    position: absolute;
+    right: 25px;
+    top: 165px;
+    height: 25px;
+    border: none;
+    border-radius: 5%;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.8);
+    font-family: "Harry potter";
+    letter-spacing: 1px;
+    font-size: 20px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(130%);
+    }
+    @media (min-width: 780px) {
+      top: 270px;
     }
   }
 }

@@ -29,22 +29,33 @@ function App() {
 
   // HANDLER FUNCTIONS
   const handleSelectHouseLift = (value) => {
-    inputMsg()
     setSearchHouse(value)
-
+    inputMsg()
   }
 
   const handleInputNameLift = (value) => {
-    inputMsg()
     setSearchName(value)
+    inputMsg()
   }
+
+  const handleResetSelect = () => {
+    setSearchHouse('gryffindor')
+  }
+  const handleResetInput = () => {
+    setSearchName('')
+  }
+  const handleResetError = () => {
+    setErrorMsg('')
+  }
+
+
 
   // FILTER FOR INPUT NAME AND SORT ALPHABETICALLY
 
   const filteredCharacters = allCharacters
-    .filter(eachCharacter => {
-      return eachCharacter.house.toLowerCase() === searchHouse.toLowerCase()
-    })
+    // .filter(eachCharacter => {
+    //   return eachCharacter.house.toLowerCase() === searchHouse.toLowerCase()
+    // 
     .filter((eachCharacter) => {
       return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
     })
@@ -87,6 +98,10 @@ function App() {
               handleInputNameLift={handleInputNameLift}
               searchNameP={searchName}
               searchHouseP={searchHouse}
+              handleResetSelectLift={handleResetSelect}
+              handleResetInputLift={handleResetInput}
+              handleResetErrorLift={handleResetError}
+
             />
             <List filteredCharactersP={filteredCharacters}
               errorMsgP={errorMsg}

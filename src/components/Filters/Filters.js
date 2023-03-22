@@ -4,16 +4,24 @@ import FilterName from './FilterName';
 import Header from '../Header/Header'
 import '../../styles/layout/Form.scss'
 
-function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP }) {
+function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP, handleResetSelectLift, handleResetInputLift, handleResetErrorLift }) {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
+  }
+
+  const handleReset = () => {
+    handleResetSelectLift();
+    handleResetInputLift();
+    handleResetErrorLift();
+
   }
 
   return (
     <>
       <Header />
       <form onSubmit={handleSubmit} className='form'>
+        <input type="button" value="Reset search" className='form__reset' onClick={handleReset} />
         <Link to='/'>
           <input type="button" value=" Go back" className='form__btn' />
         </Link>

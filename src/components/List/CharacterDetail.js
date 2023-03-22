@@ -71,7 +71,7 @@ function CharacterDetail({ findCharacterP }) {
             >
               - {findCharacterP.nicknames[0]} -</p>
             <p
-              className={findCharacterP.nicknames.length === 1 ? 'hidden' : 'detail__nickname'}
+              className={findCharacterP.nicknames.length <= 1 ? 'hidden' : 'detail__nickname'}
             >
               - {findCharacterP.nicknames[1]} -</p>
             <div className="detail__desc">

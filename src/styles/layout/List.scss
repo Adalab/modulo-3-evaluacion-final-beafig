@@ -24,8 +24,20 @@
   padding: 0 20px;
   text-align: center;
   margin-top: 50px;
+  @media (min-width: 700px) {
+    font-size: 35px;
+  }
+  @media (min-width: 1300px) {
+    font-size: 50px;
+  }
   &__img {
     width: 250px;
+    @media (min-width: 700px) {
+      width: 400px;
+    }
+    @media (min-width: 1300px) {
+      width: 600px;
+    }
   }
   &__container {
     background-color: #0e1b24;
