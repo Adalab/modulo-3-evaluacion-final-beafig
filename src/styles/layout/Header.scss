@@ -1,0 +1,18 @@
+@import "../core/variables.scss";
+
+.header {
+  background-image: url("https://assets.puzzlefactory.pl/puzzle/346/995/original.jpg");
+  height: 150px;
+  // background-position: 0 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  &__title {
+    font-family: "Harry potter";
+    font-size: 65px;
+    color: white;
+  }
+}

@@ -1,4 +1,4 @@
-function FilterHouse({ handleSelectHouseLift }) {
+function FilterHouse({ handleSelectHouseLift, searchHouseP }) {
 
   const handleSelectHouse = (ev) => {
     handleSelectHouseLift(ev.target.value)
@@ -7,7 +7,8 @@ function FilterHouse({ handleSelectHouseLift }) {
   return (
     <label htmlFor="house"> Choose a house: {''}
       <select name="house" id="house"
-        onChange={handleSelectHouse}>
+        onChange={handleSelectHouse}
+        value={searchHouseP}>
         <option value="gryffindor">Gryffindor</option>
         <option value="hufflepuff">Hufflepuff</option>
         <option value="ravenclaw">Ravenclaw</option>

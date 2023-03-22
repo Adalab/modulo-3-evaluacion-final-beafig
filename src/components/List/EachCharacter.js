@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 
 function EachCharacter({ eachCharacterP }) {
 
-  // console.log(eachCharacterP);
   return (
     <Link to={'/character/' + eachCharacterP.id}>
       <li>

@@ -9,6 +9,7 @@ import Footer from './Footer/Footer';
 import Landing from './Landing/Landing';
 import CharacterDetail from './List/CharacterDetail';
 import List from './List/List';
+import NotFound from './List/NotFound';
 
 function App() {
 
@@ -23,7 +24,6 @@ function App() {
     callToApi(searchHouse)
       .then(cleanData => {
         setAllCharacters(cleanData)
-        console.log(cleanData);
       })
   }, [searchHouse])
 
@@ -34,24 +34,26 @@ function App() {
 
   const handleInputNameLift = (value) => {
     setSearchName(value)
+    inputMsg()
   }
 
   // FILTER FOR INPUT NAME AND SORT ALPHABETICALLY
 
   const filteredCharacters = allCharacters
     .filter((eachCharacter) => {
-      if (eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())) {
-        return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
-      } else {
-        // setErrorMsg(<p>No está</p>)
-      }
+      return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
     })
     .sort((x, y) => x.name.localeCompare(y.name))
 
-  // const species = allCharacters
-  //   .map(each => each.alive)
+  // ERROR MESSAGE
 
-  // console.log(species);
+  const inputMsg = () => {
+    if (filteredCharacters.length === 0) {
+      setErrorMsg(<p>El personaje que busca no se encuentra en la lista</p>)
+    } else if (filteredCharacters.length !== 0) {
+      setErrorMsg('')
+    }
+  }
 
   // USELOCATION FOR ID DYNAMIC PAGE
   const { pathname } = useLocation()
@@ -74,9 +76,10 @@ function App() {
               handleSelectHouseLift={handleSelectHouseLift}
               handleInputNameLift={handleInputNameLift}
               searchNameP={searchName}
+              searchHouseP={searchHouse}
             />
             <List filteredCharactersP={filteredCharacters}
-              errorMsgP={errorMsg}
+              errorMsgP={errorMsg} inputMsgP={inputMsg}
             />
           </>} />
         <Route path='/character/:id'
@@ -84,6 +87,7 @@ function App() {
             findCharacterP={findCharacter}
           />}
         />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </main>
     <Footer></Footer>

@@ -47,34 +47,35 @@ function CharacterDetail({ findCharacterP }) {
     }
   }
 
+  if (findCharacterP !== undefined) {
+    return (
+      <>
+        <Header />
+        <section>
+          <Link to="/characters/"> Volver</Link>
+          <h3>{findCharacterP.name}</h3>
+          <img
+            src={findCharacterP.alive ? alive : dead} alt="Icon alive or dead"
+            title="Icon alive or dead" />
+          <h4>{findCharacterP.house}</h4>
+          {house()}
+          <img
+            src={findCharacterP.image ? findCharacterP.image : "https://media4.giphy.com/media/6jemHpKLDe27C/200w.gif?cid=6c09b952p80wcwt2bp9on4aak96m9ws1mbqebco6vhqx416e&rid=200w.gif&ct=g"}
+            alt={"Foto de " + findCharacterP.name}
+            title={"Foto de " + findCharacterP.name} />
 
-  return (
-    <>
-      <Header />
-      <section>
-        <Link to="/characters/"> Volver</Link>
-        <h3>{findCharacterP.name}</h3>
-        <img
-          src={findCharacterP.alive ? alive : dead} alt="Icon alive or dead"
-          title="Icon alive or dead" />
-        <h4>{findCharacterP.house}</h4>
-        {house()}
-        <img
-          src={findCharacterP.image ? findCharacterP.image : "https://media4.giphy.com/media/6jemHpKLDe27C/200w.gif?cid=6c09b952p80wcwt2bp9on4aak96m9ws1mbqebco6vhqx416e&rid=200w.gif&ct=g"}
-          alt={"Foto de " + findCharacterP.name}
-          title={"Foto de " + findCharacterP.name} />
-
-        <p>Actress/actor: {findCharacterP.actor}</p>
-        <div>
-          <p> Specie: {findCharacterP.species ? findCharacterP.species[0].toUpperCase() + findCharacterP.species.substring(1) : 'Unknown'}
-          </p>
-          {speciesIcon()}
-        </div>
-        {gender()}
-        <img src={findCharacterP.student ? student : noStudent} alt="Student logo" title="Student logo" />
-        <p> Ancestry: {findCharacterP.ancestry ? findCharacterP.ancestry[0].toUpperCase() + findCharacterP.ancestry.substring(1) : 'Unknown'}</p>
-      </section>
-    </>
-  )
+          <p>Actress/actor: {findCharacterP.actor}</p>
+          <div>
+            <p> Specie: {findCharacterP.species ? findCharacterP.species[0].toUpperCase() + findCharacterP.species.substring(1) : 'Unknown'}
+            </p>
+            {speciesIcon()}
+          </div>
+          {gender()}
+          <img src={findCharacterP.student ? student : noStudent} alt="Student logo" title="Student logo" />
+          <p> Ancestry: {findCharacterP.ancestry ? findCharacterP.ancestry[0].toUpperCase() + findCharacterP.ancestry.substring(1) : 'Unknown'}</p>
+        </section>
+      </>
+    )
+  }
 }
 export default CharacterDetail;

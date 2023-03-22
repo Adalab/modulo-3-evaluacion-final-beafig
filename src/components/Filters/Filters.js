@@ -2,7 +2,7 @@ import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 import Header from '../Header/Header'
 
-function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP }) {
+function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP }) {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -12,7 +12,8 @@ function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP }) {
     <>
       <Header />
       <form onSubmit={handleSubmit}>
-        <FilterHouse handleSelectHouseLift={handleSelectHouseLift} />
+        <FilterHouse handleSelectHouseLift={handleSelectHouseLift}
+          searchHouseP={searchHouseP} />
         <FilterName handleInputNameLift={handleInputNameLift}
           searchNameP={searchNameP} />
       </form>
