@@ -66,6 +66,14 @@ function CharacterDetail({ findCharacterP }) {
                 src={findCharacterP.alive ? alive : dead} alt="Icon alive or dead"
                 title="Icon alive or dead" />
             </div>
+            <p
+              className={findCharacterP.nicknames.length === 0 ? 'hidden' : 'detail__nickname'}
+            >
+              - {findCharacterP.nicknames[0]} -</p>
+            <p
+              className={findCharacterP.nicknames.length === 1 ? 'hidden' : 'detail__nickname'}
+            >
+              - {findCharacterP.nicknames[1]} -</p>
             <div className="detail__desc">
               <div className="detail__desc--box">
                 <img
