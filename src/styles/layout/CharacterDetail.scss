@@ -2,7 +2,7 @@
 
 .detail {
   background-image: url("https://images8.alphacoders.com/110/1102284.jpg");
-  min-height: 85vh;
+  min-height: 88vh;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -35,10 +35,17 @@
     border-radius: 10%;
     background-image: linear-gradient(#0e1b24, #767676);
     padding: 15px;
+    @media (min-width: 900px) {
+      transform: scale(120%);
+    }
+    @media (min-width: 1200px) {
+      transform: scale(140%);
+    }
   }
   &__desc {
     &--box {
       display: flex;
+      justify-content: center;
       align-items: center;
     }
     &--img {
@@ -50,6 +57,9 @@
   }
   &__house {
     width: 80px;
+    @media (min-width: 900px) {
+      width: 100px;
+    }
   }
 }
 

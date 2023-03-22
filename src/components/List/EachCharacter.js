@@ -24,10 +24,8 @@ function EachCharacter({ eachCharacterP }) {
     <Link to={'/character/' + eachCharacterP.id} className='eachCharacter__link'>
       <h3 className='eachCharacter__title'>{eachCharacterP.name}</h3>
       <li className='eachCharacter'>
-        <div>
-          <img src={eachCharacterP.image ? eachCharacterP.image : "https://i.pinimg.com/originals/12/2b/a4/122ba43437eb04cace7fd5cff3909545.gif"} alt={"Foto de " + eachCharacterP.name} title={"Foto de " + eachCharacterP.name}
-            className='eachCharacter__img' />
-        </div>
+        <img src={eachCharacterP.image ? eachCharacterP.image : "https://i.pinimg.com/originals/12/2b/a4/122ba43437eb04cace7fd5cff3909545.gif"} alt={"Foto de " + eachCharacterP.name} title={"Foto de " + eachCharacterP.name}
+          className='eachCharacter__img' />
         <div>
           <div className='eachCharacter__container--specie'>
             {speciesIcon()}

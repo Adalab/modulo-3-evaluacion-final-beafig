@@ -11,6 +11,9 @@
     text-align: center;
     color: white;
     letter-spacing: 1.5px;
+    @media (min-width: 900px) {
+      font-size: 35px;
+    }
   }
   &__img {
     width: 150px;
@@ -35,10 +38,16 @@
   }
   &__specie {
     width: 25px;
+    @media (min-width: 900px) {
+      width: 30px;
+    }
   }
   &__text {
     font-size: 17px;
     font-family: $fasthand;
     letter-spacing: 2px;
+    @media (min-width: 900px) {
+      font-size: 21px;
+    }
   }
 }

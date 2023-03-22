@@ -7,13 +7,37 @@
   justify-content: center;
   align-items: center;
   border-top: solid 2px white;
-  height: 15vh;
+  height: 12vh;
+  @media (min-width: 700px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
   &__text {
     color: white;
     margin-top: 5px;
     font-family: $fasthand;
+    letter-spacing: 1.5px;
+    @media (min-width: 700px) {
+      font-size: 20px;
+    }
   }
   &__logo {
     height: 70px;
+    @media (min-width: 700px) {
+      height: 92px;
+    }
+  }
+  &__container {
+    display: flex;
+  }
+}
+
+.fa-brands {
+  color: white;
+  margin: 5px 0 0 10px;
+  cursor: pointer;
+  @media (min-width: 700px) {
+    font-size: 20px;
   }
 }

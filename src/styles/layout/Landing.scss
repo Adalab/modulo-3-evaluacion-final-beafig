@@ -4,10 +4,12 @@
   background-image: url("https://w0.peakpx.com/wallpaper/888/188/HD-wallpaper-harry-potter-1-castle-harry-potter-magic-movie-the-sorcerers-stone.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 85vh;
+  min-height: 88vh;
   @media (min-width: 780px) {
-    // background-position-y: 60%;
     background-image: url("https://fotografias.antena3.com/clipping/cmsimages02/2016/12/19/2EE113FB-4B38-40C5-B086-857D6B8E7967/98.jpg?crop=2048,1152,x0,y35&width=1900&height=1069&optimize=high&format=webply");
+  }
+  @media (min-width: 1400px) {
+    background-position-y: 100%;
   }
   &__btn {
     background-color: transparent;
@@ -28,6 +30,7 @@
     }
     @media (min-width: 780px) {
       font-size: 35px;
+      right: 35px;
     }
   }
   &__audio {
