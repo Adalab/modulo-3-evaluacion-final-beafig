@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   background-color: #0e1b24;
+  min-height: 65vh;
   @media (min-width: 700px) {
     grid-template-columns: repeat(2, 1fr);
   }

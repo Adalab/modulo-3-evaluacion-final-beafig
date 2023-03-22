@@ -6,6 +6,7 @@
   background-size: cover;
   min-height: 85vh;
   @media (min-width: 780px) {
+    // background-position-y: 60%;
     background-image: url("https://fotografias.antena3.com/clipping/cmsimages02/2016/12/19/2EE113FB-4B38-40C5-B086-857D6B8E7967/98.jpg?crop=2048,1152,x0,y35&width=1900&height=1069&optimize=high&format=webply");
   }
   &__btn {
@@ -14,9 +15,9 @@
     padding: 15px;
     border: solid 2px white;
     border-radius: 50%;
-    position: sticky;
-    left: 65%;
-    top: 5%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
     font-family: "Harry potter";
     font-size: 25px;
     cursor: pointer;
@@ -26,7 +27,6 @@
       transform: scale(130%);
     }
     @media (min-width: 780px) {
-      left: 75%;
       font-size: 35px;
     }
   }

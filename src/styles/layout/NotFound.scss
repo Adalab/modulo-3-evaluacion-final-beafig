@@ -1,0 +1,47 @@
+@import "../core/variables.scss";
+
+.notFound {
+  background-color: #0e1b24;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    @media (min-width: 700px) {
+      height: 250px;
+    }
+    @media (min-width: 1200px) {
+      height: 350px;
+    }
+  }
+  &__text {
+    color: white;
+    font-family: "harry Potter";
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    @media (min-width: 1200px) {
+      font-size: 40px;
+    }
+  }
+  &__btn {
+    background-color: transparent;
+    color: white;
+    padding: 15px;
+    border: solid 2px white;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 170px;
+    font-family: "Harry potter";
+    font-size: 25px;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: $mainColor;
+      transform: scale(130%);
+    }
+  }
+}
