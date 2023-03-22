@@ -7,13 +7,14 @@ function Landing() {
   return (
     <section className='landing'>
       <Link to="/characters/" >
-        <input type="button" value="Go to characters" className='landing__btn' />
+        <input type="button" value="Go characters" className='landing__btn' />
       </Link>
       <audio
         className='landing__audio'
         src={introMusic}
         autoPlay
         loop
+        preload='auto'
       />
     </section>
   )

@@ -29,17 +29,22 @@ function App() {
 
   // HANDLER FUNCTIONS
   const handleSelectHouseLift = (value) => {
+    inputMsg()
     setSearchHouse(value)
+
   }
 
   const handleInputNameLift = (value) => {
-    setSearchName(value)
     inputMsg()
+    setSearchName(value)
   }
 
   // FILTER FOR INPUT NAME AND SORT ALPHABETICALLY
 
   const filteredCharacters = allCharacters
+    .filter(eachCharacter => {
+      return eachCharacter.house.toLowerCase() === searchHouse.toLowerCase()
+    })
     .filter((eachCharacter) => {
       return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
     })
@@ -49,12 +54,14 @@ function App() {
 
   const inputMsg = () => {
     if (filteredCharacters.length === 0) {
-      setErrorMsg(<p>El personaje que busca no se encuentra en la lista</p>)
+      setErrorMsg(<div className='errorMsg__container'><p className='errorMsg'>El personaje que busca no se encuentra en la lista</p>
+        <img src='https://media.tenor.com/qYySZ9y7e2YAAAAC/hermione-granger-wand.gif' alt='Hermione gif' title='Hermione gif' className='errorMsg__img'></img>
+      </div>)
     } else if (filteredCharacters.length !== 0) {
       setErrorMsg('')
     }
   }
-
+  console.log(filteredCharacters.length);
   // USELOCATION FOR ID DYNAMIC PAGE
   const { pathname } = useLocation()
 
