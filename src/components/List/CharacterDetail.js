@@ -51,6 +51,8 @@ function CharacterDetail({ findCharacterP }) {
     }
   }
 
+  console.log(findCharacterP);
+
   if (findCharacterP !== undefined) {
     return (
       <>

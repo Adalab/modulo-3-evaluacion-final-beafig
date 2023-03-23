@@ -4,16 +4,15 @@ import FilterName from './FilterName';
 import Header from '../Header/Header'
 import '../../styles/layout/Form.scss'
 
-function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP, handleResetSelectLift, handleResetInputLift, handleResetErrorLift }) {
+function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP }) {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
   }
 
   const handleReset = () => {
-    handleResetSelectLift();
-    handleResetInputLift();
-    handleResetErrorLift();
+    handleSelectHouseLift('gryffindor');
+    handleInputNameLift('');
 
   }
 

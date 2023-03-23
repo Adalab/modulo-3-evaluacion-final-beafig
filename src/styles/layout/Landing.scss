@@ -1,17 +1,11 @@
 @import "../core/variables.scss";
 
 .landing {
-  background-image: url("https://w0.peakpx.com/wallpaper/888/188/HD-wallpaper-harry-potter-1-castle-harry-potter-magic-movie-the-sorcerers-stone.jpg");
+  background-image: url("https://images8.alphacoders.com/110/1102284.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 88vh;
-  // @media (min-width: 900px) {
-  //   background-position-y: 50%;
-  // }
-  @media (min-width: 1200px) {
-    background-position-y: 30%;
-  }
   &__btn {
     background-color: transparent;
     color: white;
@@ -38,4 +32,14 @@
     color: red;
     background-color: black;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.fa-volume-xmark,
+.fa-volume-high {
+  color: white;
+  font-size: 35px;
 }

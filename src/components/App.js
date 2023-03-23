@@ -17,7 +17,7 @@ function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [searchHouse, setSearchHouse] = useState('gryffindor');
   const [searchName, setSearchName] = useState('')
-  const [errorMsg, setErrorMsg] = useState('')
+  //const [errorMsg, setErrorMsg] = useState('')
 
   // FETCH
   useEffect(() => {
@@ -30,32 +30,15 @@ function App() {
   // HANDLER FUNCTIONS
   const handleSelectHouseLift = (value) => {
     setSearchHouse(value)
-    inputMsg()
   }
 
   const handleInputNameLift = (value) => {
     setSearchName(value)
-    inputMsg()
   }
-
-  const handleResetSelect = () => {
-    setSearchHouse('gryffindor')
-  }
-  const handleResetInput = () => {
-    setSearchName('')
-  }
-  const handleResetError = () => {
-    setErrorMsg('')
-  }
-
-
 
   // FILTER FOR INPUT NAME AND SORT ALPHABETICALLY
 
   const filteredCharacters = allCharacters
-    // .filter(eachCharacter => {
-    //   return eachCharacter.house.toLowerCase() === searchHouse.toLowerCase()
-    // 
     .filter((eachCharacter) => {
       return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
     })
@@ -63,25 +46,19 @@ function App() {
 
   // ERROR MESSAGE
 
-  const inputMsg = () => {
-    if (filteredCharacters.length === 0) {
-      setErrorMsg(
-        <div className='errorMsg__container'>
-          <p className='errorMsg'>El personaje que busca no se encuentra en la lista</p>
-          <img src='https://media.tenor.com/qYySZ9y7e2YAAAAC/hermione-granger-wand.gif' alt='Hermione gif' title='Hermione gif' className='errorMsg__img'></img>
-        </div>
-      )
-    } else if (filteredCharacters.length !== 0) {
-      setErrorMsg('')
-    }
-  }
-  console.log(filteredCharacters.length);
+  const errorMsg = (filteredCharacters.length === 0) && (
+    <div className='errorMsg__container'>
+      <p className='errorMsg'>El personaje que busca no se encuentra en la lista</p>
+      <img src='https://media.tenor.com/qYySZ9y7e2YAAAAC/hermione-granger-wand.gif' alt='Hermione gif' title='Hermione gif' className='errorMsg__img'></img>
+    </div>
+  )
+
   // USELOCATION FOR ID DYNAMIC PAGE
   const { pathname } = useLocation()
 
   const routeData = matchPath("/character/:id", pathname)
 
-  const characterId = routeData === null ? null : routeData.params.id
+  const characterId = routeData === null ? null : routeData.params.id;
 
   // FIND() TO FIND CLICKED CHARACTER
 
@@ -98,10 +75,6 @@ function App() {
               handleInputNameLift={handleInputNameLift}
               searchNameP={searchName}
               searchHouseP={searchHouse}
-              handleResetSelectLift={handleResetSelect}
-              handleResetInputLift={handleResetInput}
-              handleResetErrorLift={handleResetError}
-
             />
             <List filteredCharactersP={filteredCharacters}
               errorMsgP={errorMsg}
