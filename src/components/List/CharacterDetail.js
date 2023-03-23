@@ -18,7 +18,7 @@ import huff from '../../images/huff.png'
 import raven from '../../images/raven.png'
 import slyt from '../../images/slyt.png'
 
-function CharacterDetail({ findCharacterP, pathnameP }) {
+function CharacterDetail({ findCharacterP }) {
 
   const speciesIcon = () => {
     if (findCharacterP.species === 'human') {
@@ -59,6 +59,7 @@ function CharacterDetail({ findCharacterP, pathnameP }) {
           <Link to="/characters/">
             <input type="button" value="Go back" className='detail__btn' />
           </Link>
+          {house()}
           <div className='detail__container'>
             <div className='container__name'>
               <h3 className='container__name--text'>{findCharacterP.name}</h3>
@@ -82,7 +83,6 @@ function CharacterDetail({ findCharacterP, pathnameP }) {
                   src={findCharacterP.image ? findCharacterP.image : "https://media4.giphy.com/media/6jemHpKLDe27C/200w.gif?cid=6c09b952p80wcwt2bp9on4aak96m9ws1mbqebco6vhqx416e&rid=200w.gif&ct=g"}
                   alt={"Foto de " + findCharacterP.name}
                   title={"Foto de " + findCharacterP.name} />
-                {house()}
               </div>
               <div className="container__desc">
                 <div className="container__data">

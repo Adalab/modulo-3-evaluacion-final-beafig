@@ -9,6 +9,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media (min-width: 700px) {
+    flex-direction: row-reverse;
+  }
   &__btn {
     background-color: transparent;
     color: white;
@@ -58,9 +61,18 @@
     }
   }
   &__house {
-    width: 80px;
+    width: 140px;
+    @media (min-width: 700px) {
+      width: 200px;
+      margin-left: 30px;
+    }
     @media (min-width: 900px) {
-      width: 100px;
+      transform: scale(120%);
+      margin-left: 70px;
+    }
+    @media (min-width: 1200px) {
+      transform: scale(140%);
+      margin-left: 140px;
     }
   }
   &__nickname {
