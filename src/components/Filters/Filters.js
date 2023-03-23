@@ -3,8 +3,9 @@ import FilterHouse from './FilterHouse';
 import FilterName from './FilterName';
 import Header from '../Header/Header'
 import '../../styles/layout/Form.scss'
+import FilterStudent from './FilterStundent';
 
-function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP }) {
+function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, searchHouseP, isStudentP, handleRadioStudentLift }) {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -28,6 +29,9 @@ function Filters({ handleSelectHouseLift, handleInputNameLift, searchNameP, sear
           searchHouseP={searchHouseP} />
         <FilterName handleInputNameLift={handleInputNameLift}
           searchNameP={searchNameP} />
+        <FilterStudent isStudentP={isStudentP}
+          handleRadioStudentLift={handleRadioStudentLift}
+        />
       </form>
     </>
   )

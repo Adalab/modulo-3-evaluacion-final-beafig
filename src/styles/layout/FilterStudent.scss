@@ -1,0 +1,22 @@
+@import "../core/variables.scss";
+
+.student {
+  color: white;
+  font-family: $fasthand;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  &__label {
+    color: white;
+    font-family: $fasthand;
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 700px) {
+      display: inline;
+    }
+  }
+}

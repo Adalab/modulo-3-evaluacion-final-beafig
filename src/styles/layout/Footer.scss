@@ -37,6 +37,9 @@
   color: white;
   margin: 5px 0 0 10px;
   cursor: pointer;
+  &:hover {
+    transform: scale(140%);
+  }
   @media (min-width: 700px) {
     font-size: 20px;
   }

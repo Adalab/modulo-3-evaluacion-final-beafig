@@ -6,7 +6,7 @@ import '../../styles/layout/Landing.scss'
 
 function Landing() {
 
-  const [isMuted, setIsMuted] = useState('false')
+  const [isMuted, setIsMuted] = useState(false)
   const audio = useRef()
 
   const handleMuteOff = () => {

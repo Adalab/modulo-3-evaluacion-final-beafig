@@ -42,4 +42,9 @@
 .fa-volume-high {
   color: white;
   font-size: 35px;
+  margin: 25px 25px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(130%);
+  }
 }

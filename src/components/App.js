@@ -17,7 +17,7 @@ function App() {
   const [allCharacters, setAllCharacters] = useState([]);
   const [searchHouse, setSearchHouse] = useState('gryffindor');
   const [searchName, setSearchName] = useState('')
-  //const [errorMsg, setErrorMsg] = useState('')
+  const [isStudent, setIsStudent] = useState('all')
 
   // FETCH
   useEffect(() => {
@@ -36,22 +36,26 @@ function App() {
     setSearchName(value)
   }
 
+  const handleRadioStudentLift = (id) => {
+    setIsStudent(id)
+  }
+
   // FILTER FOR INPUT NAME AND SORT ALPHABETICALLY
 
   const filteredCharacters = allCharacters
     .filter((eachCharacter) => {
       return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase())
     })
+    .filter(eachCharacter => {
+      if (isStudent === 'all') {
+        return true
+      } else if (isStudent === 'yes') {
+        return eachCharacter.student
+      } else if (isStudent === 'no') {
+        return !eachCharacter.student
+      }
+    })
     .sort((x, y) => x.name.localeCompare(y.name))
-
-  // ERROR MESSAGE
-
-  const errorMsg = (filteredCharacters.length === 0) && (
-    <div className='errorMsg__container'>
-      <p className='errorMsg'>El personaje que busca no se encuentra en la lista</p>
-      <img src='https://media.tenor.com/qYySZ9y7e2YAAAAC/hermione-granger-wand.gif' alt='Hermione gif' title='Hermione gif' className='errorMsg__img'></img>
-    </div>
-  )
 
   // USELOCATION FOR ID DYNAMIC PAGE
   const { pathname } = useLocation()
@@ -75,9 +79,10 @@ function App() {
               handleInputNameLift={handleInputNameLift}
               searchNameP={searchName}
               searchHouseP={searchHouse}
+              isStudentP={isStudent}
+              handleRadioStudentLift={handleRadioStudentLift}
             />
             <List filteredCharactersP={filteredCharacters}
-              errorMsgP={errorMsg}
             />
           </>} />
         <Route path='/character/:id'
