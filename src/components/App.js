@@ -58,6 +58,7 @@ function App() {
     .sort((x, y) => x.name.localeCompare(y.name))
 
   // USELOCATION FOR ID DYNAMIC PAGE
+
   const { pathname } = useLocation()
 
   const routeData = matchPath("/character/:id", pathname)

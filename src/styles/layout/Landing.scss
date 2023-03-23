@@ -41,10 +41,13 @@
 .fa-volume-xmark,
 .fa-volume-high {
   color: white;
-  font-size: 35px;
+  font-size: 20px;
   margin: 25px 25px;
   cursor: pointer;
   &:hover {
     transform: scale(130%);
+  }
+  @media (min-width: 780px) {
+    font-size: 35px;
   }
 }

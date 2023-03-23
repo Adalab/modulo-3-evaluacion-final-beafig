@@ -18,7 +18,7 @@ import huff from '../../images/huff.png'
 import raven from '../../images/raven.png'
 import slyt from '../../images/slyt.png'
 
-function CharacterDetail({ findCharacterP }) {
+function CharacterDetail({ findCharacterP, pathnameP }) {
 
   const speciesIcon = () => {
     if (findCharacterP.species === 'human') {
@@ -51,7 +51,6 @@ function CharacterDetail({ findCharacterP }) {
     }
   }
 
-  console.log(findCharacterP);
 
   if (findCharacterP !== undefined) {
     return (
